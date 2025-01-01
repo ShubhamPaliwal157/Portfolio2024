@@ -370,7 +370,9 @@ hr{
     width: 70%;
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
     /* border-radius: 25px; */
     overflow: hidden;
     justify-self: center;
@@ -440,8 +442,9 @@ hr{
     z-index: 3;
     display: flex;
     flex-direction: row;
-    /* width: 400px; */
+    width: 350px;
     pointer-events: none;
+    transform: translate(-40px);
 }
 
 
@@ -489,7 +492,7 @@ hr{
     align-items: center;
     clip-path: polygon(100% 0, 100% 70%, 95% 100%, 0 100%, 0 0);
     background-color: #1f282d;
-    margin: 10px 15px;
+    margin: 20px 15px;
     color: #ef5f64;
     transition: 1ms;
     pointer-events: all;
@@ -501,3 +504,207 @@ hr{
     background-color: #ad4141;
     color: #182430;
 }
+
+#tech-info{
+    margin: 10px 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+#skills{
+    /* position: absolute;
+    top: 0;
+    right: 0; */
+    /* transform: translate(-100%); */
+    width: 300px;
+    /* height: 250px; */
+    /* backdrop-filter: blur(1.8px); */
+    z-index: 3;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    display: flex;
+    /* justify-content: space-evenly; */
+}
+
+#skills input{
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;position: absolute;  
+}
+
+#skills label{
+    display: flex;
+    position: relative;
+    height: 0;
+    width: 150px;
+    z-index: 3;
+    justify-content: center;
+    align-items: flex-start;
+    border: 20px solid transparent;
+    border-bottom: 18px solid #1f282d;
+    pointer-events: all;
+}
+
+#skills label:hover{
+    border-bottom: 18px solid #3f383d;
+}
+
+.skills{
+    position: relative;
+    display: none;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px #ad4141;
+    list-style: none;
+    padding: 20px 50px;
+    background-color: #0f1014;
+    font-family: VT323;
+}
+
+.skills li{
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+    height: 20px;
+}
+
+.skills li p:nth-child(2){
+    color: #ef5f64
+}
+
+#type-skill:checked + .skills {
+    display: flex;
+}
+
+.skills .type-skill{
+    display: flex;
+    position: absolute;
+    height: 0;
+    width: 150px;
+    z-index: 3;
+    justify-content: center;
+    align-items: flex-start;
+    border: 20px solid transparent;
+    border-bottom: 18px solid #ad4141;
+    color: #182430;
+    top: 0;
+    left: 0;
+    transform: translate(-1%, -103%);
+}
+
+.education{
+    position: relative;
+    display: none;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px #ad4141;
+    list-style: none;
+    padding: 20px 50px;
+    background-color: #0f1014;
+}
+
+.education p{
+    display: flex;
+    width: 200px;
+    justify-content: center;
+    height: 40px;
+}
+
+.education p:nth-child(4){
+    color: #ef5f64;
+    display: block;
+}
+
+.education p a{
+    pointer-events: all;
+    color: #ff8f8f;
+    text-decoration: underline;
+    transition: 1s;
+    letter-spacing: -2px;
+}
+
+.education p a:hover{
+    color: #ad4141;
+    letter-spacing: 1px;
+}
+
+#type-education:checked + .education {
+    display: flex;
+}
+
+.education .type-education{
+    display: flex;
+    position: absolute;
+    height: 0;
+    width: 150px;
+    z-index: 3;
+    justify-content: center;
+    align-items: flex-start;
+    border: 20px solid transparent;
+    border-bottom: 18px solid #ad4141;
+    color: #182430;
+    top: 0;
+    right: 0;
+    transform: translate(1%, -103%);
+}
+
+#experience{
+    height: auto;
+    width: 300px;
+    position: relative;
+    z-index: 3;
+    margin-top: 20px;
+}
+
+.border{
+    width: 100%;
+    position: relative;
+    display: flex;
+    z-index: 3;
+    flex-direction: column;
+    border: solid 2px #ad4141;
+    justify-content: center;
+    align-items: center;
+}
+
+.border .vertex1{
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    height: 40px;
+    width: 40px;
+    border-top: solid 7px #ef5f64;
+    border-left: solid 7px #ef5f64;
+    box-shadow: -3px -3px 5px #ef5f64;
+}
+
+.border .vertex2{
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    height: 40px;
+    width: 40px;
+    border-bottom: solid 7px #ef5f64;
+    border-right: solid 7px #ef5f64;
+    box-shadow: 3px 3px 5px #ef5f64;
+}
+
+.content{
+   margin: 10px 0;
+    width: 90%;    
+    background-color: #0f1014;
+    padding: 5%;
+    /* box-shadow: 0 0 10px 3px #0f1014; */
+}
+
