@@ -45,11 +45,36 @@
     src: url('fonts/VT323/VT323-Regular.ttf');
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #182430;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #a7403d;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6b3e45;
+  }
+
+
 *{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 body{
@@ -159,7 +184,7 @@ hr{
     left: 0;
     background-color: #f75d62;
     /* margin-bottom: 1px; */
-    animation: boxmove linear 3s infinite;
+    animation: boxmove cubic-bezier(1, 0.25, 0, 0) 2s infinite;
 }
 
 @keyframes boxmove{
@@ -357,7 +382,7 @@ hr{
     font-variation-settings: "EDPT" 100, "EHLT" 12; */
     font-size: 3rem;
     font-weight: 200;
-    animation: blimp 2s cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite forwards;
+    animation: blimp 3s cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite forwards;
 }
 
 @keyframes blimp {
@@ -367,7 +392,7 @@ hr{
 
 #info{
     border: 2px solid #a7403d;
-    width: 70%;
+    width: 80%;
     position: relative;
     display: flex;
     flex-direction: row;
@@ -377,7 +402,7 @@ hr{
     overflow: hidden;
     justify-self: center;
     align-self: center;
-
+    margin-bottom: 100px;
 }
 
 .grid-back {
@@ -419,19 +444,6 @@ hr{
     /* background-color: lightblue; */
     border: 1px solid #6b3e45;
     /* transition: background-color 50ms; */
-    animation: fade-in 1ms linear;
-    animation-timeline: view(95%, 0);
-}
-
-@keyframes fade-in {
-    from{
-        opacity: 0;
-        transform: scale(0.2);
-    }
-    to{
-        opacity: 1;
-        transform: scale(1);
-    }
 }
 
 .grid-box:hover {
@@ -498,7 +510,20 @@ hr{
     pointer-events: all;
     font-family: Orbitron;
     cursor: pointer;
+    /* animation: fade-in linear forwards;
+    animation-timeline: view(); */
 }
+/* 
+@keyframes fade-in {
+    from{
+        opacity: 0.4;
+        transform: scale(0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+} */
 
 .grey-box-elements li:hover{
     background-color: #ad4141;
@@ -700,6 +725,14 @@ hr{
     box-shadow: 3px 3px 5px #ef5f64;
 }
 
+#tapered-head{
+    width: 100%;
+    height: 25px;
+    background-color:  #ad4141;
+    color:#182430;
+    font-size: larger;
+}
+
 .content{
    margin: 10px 0;
     width: 90%;    
@@ -708,3 +741,112 @@ hr{
     /* box-shadow: 0 0 10px 3px #0f1014; */
 }
 
+#end{
+    width: 80%;
+    height: 250px;
+    background-color: #ef5f64b5;
+    position: relative;
+    align-self: center;
+    justify-self: center;
+    clip-path: polygon(45% 0, 55% 35%, 100% 35%, 100% 100%, 0 100%, 0 0);
+}
+
+#end #footer{
+    width: 100%;
+    height: 250px;
+    background-color: #111c21;
+    position: relative;
+    align-self: center;
+    justify-self: center;
+    clip-path: polygon(45% 0, 55% 35%, 100% 35%, 100% 100%, 0 100%, 0 0);
+    transform: scale(0.98);
+    top: 2%;
+    display: grid;
+    font-family: Tourney;
+}
+
+#footer h1{
+    position: relative;
+    font-size: 50px;
+    left: 1%;
+    padding-top: 8px;
+}
+
+#footer p{
+    padding: 30px 50px;
+    font-size: 1.1em;
+}
+
+#to-top{
+    position: relative;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    color: #a7403d;
+}
+
+#to-top img{
+    height: 30px;
+    width: 30px;
+    transition: 0.3s;
+}
+
+#to-top:hover img{
+    transform: translateY(-10px);
+}
+
+@media screen and (max-width: 900px) {
+    #home{
+        height: fit-content;
+    }
+    .home{
+        flex-direction: column-reverse;
+        height: max-content;
+    }
+    .sidebar{
+        display: none;
+    }
+    .desc{
+        position: relative;
+        margin: 50px;
+        align-self: center;
+        width: 40%;
+    }
+    #portrait{
+        width: 100% !important;
+    }
+    #portrait img{
+        width: 100% !important;
+    }
+    .desc .text{
+        width: 100% !important;
+    }
+    #info{
+        flex-direction: column !important;
+        align-items: center;
+    }
+    #end{
+        clip-path: none !important;
+    }
+    #footer{
+        clip-path: none !important;
+    }
+    #footer h1{
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    #home-right{
+        width: 320px;
+    }
+    #home-right h3{
+        font-size: 2em !important;
+    }
+    .desc{
+        width: 300px !important;
+    }
+}
