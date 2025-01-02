@@ -224,7 +224,7 @@ hr{
 #home{
     display: flex;
     flex-direction: column ;
-    height: 100vh;
+    height: 600px;
     width: 100%;
     justify-content: flex-start;
     align-items: center;
@@ -504,7 +504,7 @@ hr{
     align-items: center;
     clip-path: polygon(100% 0, 100% 70%, 95% 100%, 0 100%, 0 0);
     background-color: #1f282d;
-    margin: 20px 15px;
+    margin: 14px 15px;
     color: #ef5f64;
     transition: 1ms;
     pointer-events: all;
@@ -762,10 +762,11 @@ hr{
     transform: scale(0.98);
     top: 2%;
     display: grid;
-    font-family: Tourney;
+    font-family: Roboto;
 }
 
 #footer h1{
+    font-family: Tourney;
     position: relative;
     font-size: 50px;
     left: 1%;
